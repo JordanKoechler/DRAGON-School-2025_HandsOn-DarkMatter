@@ -1,0 +1,94 @@
+<?xml version="3.1.0" ?>
+<Output>
+  <partialstore />
+  <fullstore />
+  <feedback value="2" />
+</Output>
+<Grid type="2D">
+  <Observer> 
+	<x value="8.33" />
+	<y value="0.0" />
+	<z value="0.0" />
+  </Observer>
+  <Rmax value="30" />
+  <L value="8." />     <!-- height of the diffusive halo in kpc -->
+  <DimR value="201" />
+  <DimZ value="71" /> 
+  <Ekmin value="0.000001" />
+  <Ekmax value="10." /> 
+  <Ekfactor value="1.10" />
+  <NuclearChain>
+    <Zmax value="1" />    
+    <Zmin value="1" />     
+    <!PropLepton />         
+    <!PropSecAntiProton />
+    <!PropExtraComponent /> 
+  </NuclearChain>
+</Grid>
+<Algorithm>
+  <OpSplit>
+    <Nrept value="30" />
+    <Dtfactor value=".25" />
+    <Dtmin value="0.0001" />
+    <Dtmax value="64." />   
+  </OpSplit>
+</Algorithm>
+<Galaxy>
+  <Gas type="Galprop" />    
+  <SNR type="Ferriere" />  
+  <SNR_Extra type="Ferriere" /> 
+  <XCOmode type="SM96" />      
+  <Diffusion type="Constant"> 
+    <BreakDiff/> 
+    <delta_H value="0.3" /> 
+    <rho_H value="312." /> 
+    <s_H value="0.04" /> 
+    <D0_1e28 value="10.2" />     <!-- diffusion coefficient in cm2/s -->
+    <DiffRefRig value = "4" /> 
+    <Delta value="0.49" />    
+    <zt value="4" />          
+    <etaT value="-0.75" />    
+  </Diffusion>
+  <Reacceleration type="Ptuskin94"> 
+    <vA_kms value="13.4" />      <!-- Alfvén speed in km/s -->
+  </Reacceleration>
+  <Convection>
+      <v0_kms value="0" /> 
+      <dvdz_kmskpc value="0." />     
+  </Convection>
+  <CrossSection type="DRAGON2" leptopt="Kamae" apopt="Winkler" ApCs="2" >  
+    <ElXS_Scal value="0." /> 
+    <PosXS_Scal value="0." /> 
+  </CrossSection>  
+  <MagneticField type="Pshirkov"> 
+     <B0disk value="2.e-06" /> 
+     <B0halo value="4.e-06" /> 
+     <B0turb value="7.5e-06" />
+  </MagneticField>
+</Galaxy>
+
+<CR>
+  <ProtNormEn_GeV value="1." /> 
+  <ElNormEn_GeV value="1." />   
+  <ProtNormFlux value="0." />  
+  <ElNormFlux value="0." />   
+  <ElNormEnExtra_GeV value="1." />
+  <ElNormFluxExtra value="0." /> 
+  <InjectionIndexElectrons> 
+    <rho_0 value="7.2" /> 
+    <alpha_0 value="1.7" /> 
+    <alpha_1 value="2.765" /> 
+    <CutoffRigEl value="12000." /> 
+  </InjectionIndexElectrons> 
+</CR>
+<!-- **************** --> 
+<!-- DARK MATTER PART --> 
+<!-- **************** --> 
+<DarkMatter Reaction="Annihilation" Model="SelfTable" Profile="NFW">
+  <PropDMLepton />
+  <Mass value="1" />               <!-- DM mass in GeV -->
+  <SigmaV value="1e-26" />         <!-- DM annihilation cross section in cm3/s -->
+  <SSDensity value="0.4" />        <!-- DM local energy density in GeV/cm^3 -->
+  <LeptonDatafile value="/Users/jordankoechler/Desktop/DRAGON_School/injec_spec/mm_1GeV_ann.txt" />   
+  <!-- File containing the e+e- spectrum from DM annihilation -->
+</DarkMatter>
