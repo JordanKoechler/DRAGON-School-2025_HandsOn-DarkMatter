@@ -94,5 +94,5 @@ ax.text(0.78, 0.79, r'$\langle\sigma v\rangle = 1.3\times10^{-26}$ cm$^3$/s', co
         verticalalignment='center', transform=ax.transAxes)
 
 fig.tight_layout(pad=0.5)
-plt.savefig('GCE_flux_spec_Fermi.pdf')
+plt.savefig('plots/GCE_flux_spec_Fermi.pdf')
 plt.show()

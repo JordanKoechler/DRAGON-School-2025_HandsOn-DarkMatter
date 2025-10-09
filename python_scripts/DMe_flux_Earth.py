@@ -139,5 +139,5 @@ axs[1].text(0.25, 0.45, r'Voyager1', color='blue', fontsize=18, horizontalalignm
         verticalalignment='center', transform=axs[1].transAxes)
 
 fig.tight_layout(pad=0.5)
-plt.savefig('DMe_Flux_vA.pdf')
+plt.savefig('plots/DMe_Flux_vA.pdf')
 plt.show()

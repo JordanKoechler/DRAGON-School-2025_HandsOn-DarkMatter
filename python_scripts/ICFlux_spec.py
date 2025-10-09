@@ -142,5 +142,5 @@ hdulisrf.close()
 hdulcmb.close()
 
 plt.tight_layout(pad=0.5)
-plt.savefig('IC_flux_spec_INTEGRAL.pdf')
+plt.savefig('plots/IC_flux_spec_INTEGRAL.pdf')
 plt.show()
